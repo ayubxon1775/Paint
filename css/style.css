@@ -140,11 +140,16 @@ section{
   color: #4a98f7;
   border: 1px solid #4a98f7;
 }
+
+.buttons .save-img:hover{
+  color: #fff;
+  background-color:#4a98f7 ;
+}
 .drawing-board {
   flex: 1;
   overflow: hidden;
 }
-.drawing-board .canvas{
+.drawing-board canvas{
   width: 100%;
   height: 100%;
   
