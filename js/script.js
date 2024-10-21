@@ -1,9 +1,10 @@
 // Global variables
 const canvas = document.querySelector('canvas'),
   toolBtns = document.querySelectorAll('.tool'),
-  fillColor = document.querySelector('#fill-color')
+  fillColor = document.querySelector('#fill-color'),
+  sizeSlider = document.querySelector('#size-slider')
 
-//  Variable
+//  Variable with default value
 let ctx = canvas.getContext('2d'),
 isDrawing = false,
 brushWidth = 5,
@@ -93,7 +94,10 @@ toolBtns.forEach (btn => {
   })
 })
 
-// stop 
+// change brush with
+sizeSlider.addEventListener( 'change' , () => brushWidth = sizeSlider.value)
+
+// stop drawing
 const stopDraw = () => {
   isDrawing = false
 }
