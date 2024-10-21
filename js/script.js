@@ -1,6 +1,7 @@
 // Global variables
 const canvas = document.querySelector('canvas'),
-  toolBtns = document.querySelectorAll('.tool')
+  toolBtns = document.querySelectorAll('.tool'),
+  fillColor = document.querySelector('#fill-color')
 
 //  Variable
 let ctx = canvas.getContext('2d'),
@@ -31,8 +32,11 @@ console.log(snapshot);
 
 // draw rectangle
 const drawRectangle = e => {
-  ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY)
+ fillColor.checked
+    ? ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY)
+    : ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY)
 }
+
 
 // drawing
 const drawing = e => {
