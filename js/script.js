@@ -67,6 +67,9 @@ const drawTriangle = e => {
 const drawing = e => {
   if(!isDrawing) return
   ctx.putImageData(snapshot, 0, 0)
+
+
+
   switch (selectedTool) {
     case 'brush':
       ctx.lineTo(e.offsetX, e.offsetY)
@@ -80,6 +83,11 @@ const drawing = e => {
       break
     case 'triangle':
       drawTriangle(e)
+      break
+    case 'eraser':
+      ctx.strokeStyle = '#FFF'
+      ctx.lineTo(e.offsetX, e.offsetY)
+      ctx.stroke()
       break
       default:
       break
